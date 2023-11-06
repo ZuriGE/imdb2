@@ -121,30 +121,31 @@ $(document).ready(function () {
 		$("#ddListPC").slideUp();
 	});
 
-	$("#btn-sendForm").on("click", function (e) {
-		e.preventDefault();
+	$("#btn-sendForm").on("click", () => {
+		// e.preventDefault();
 
-		if (typeof $("#form_title") == "string" && typeof $("#form_nationality") == "string" && typeof $("#form_genre") == "string" && typeof $("#form_photo") == "string" && typeof $("#form_releaseYear") == "number") {
-			let title = $("#form_title").val();
-			let releaseYear = $("#form_releaseYear").val();
-			let nationality = $("#form_nationality").val();
-			let genre = $("#form_genre").val();
-			let photo = $("#form_photo").val();
-			let newMovie = new Movie(title, releaseYear, nationality, genre, photo);
+		console.log("AAA");
+		let title = $("#form_title").val();
+		let releaseYear = $("#form_releaseYear").val();
+		let nationality = $("#form_nationality").val();
+		let genre = $("#form_genre option:selected").text();
+		let photo = $("#form_photo").val();
+		let newMovie = new Movie(title, releaseYear, nationality, genre, photo);
 
-			newMovie.actors = $("#form_actors").val();
-			newMovie.director = $("#form_director").val();
-			newMovie.writer = $("#form_writer").val();
-			newMovie.language = $("#form_language").val();
-			newMovie.plataforma = $("#form_plataforma").val();
-			newMovie.producer = $("#form_producer").val();
-			newMovie.distributor = $("#form_distributor").val();
-			newMovie.mainCharacterName = $("#form_mainChar").val();
-			newMovie.isMCU = $("#checkbox").is(":checked");
+		newMovie.actors = $("#form_actors").val();
+		newMovie.director = $("#form_director").val();
+		newMovie.writer = $("#form_writer").val();
+		newMovie.language = $("#form_language").val();
+		newMovie.plataforma = $("#form_plataforma").val();
+		newMovie.producer = $("#form_producer").val();
+		newMovie.distributor = $("#form_distributor").val();
+		newMovie.mainCharacterName = $("#form_mainChar").val();
+		newMovie.isMCU = $("#checkbox").is(":checked");
 
-			// Agregar el objeto Movie al array
-			fmdb.push(newMovie);
-		}
+		// Agregar el objeto Movie al array
+		fmdb.push(newMovie);
+		console.log(newMovie.title);
+
 		// Limpia los campos del formulario
 		$("#movieForm")[0].reset();
 		$("#movieForm").css("display", "none");
