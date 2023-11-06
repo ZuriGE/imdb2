@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script src="scriptFontAwesome.js"></script>
+		<!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" /> -->
+		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+		<link rel="stylesheet" href="fmdbStyles.css" />
+		<title>FMDb</title>
+	</head>
+	<body>
+		<!-- NAV BAR -->
+		<nav class="menu">
+			<button id="ddButton" class="rS"><i class="fa-solid fa-bars"></i></button>
+
+			<button class="btn-home" id="btn-home"><img src="./img/logo-no-background.png" alt="logo" class="logo" /></button>
+
+			<ul class="ddListMobile rS" id="ddListMobile">
+				<li><button class="btn-prof">Profesionales</a></li>
+				<li>
+					<button id="ddButtonCat">Películas<i id="flechaS" class="fa-solid fa-chevron-right"></i></button>
+					<ul id="ddList--sec" class="ddList--sec">
+						<li class=""><button class="btn_film" data-category="todo" id="cat_todo">Ver todo</button></li>
+						<li class=""><button class="btn_film" data-category="Acción" id="cat_accion">Acción</button></li>
+						<li class=""><button class="btn_film" data-category="Ciencia Ficción" id="cat_scifi">Sci-Fi</button></li>
+						<li class=""><button class="btn_film" data-category="Comedia" id="cat_comedia">Comedia</button></li>
+						<li class=""><button class="btn_film" data-category="Drama" id="cat_drama">Drama</button></li>
+						<li class=""><button class="btn_film" data-category="Fantasía" id="cat_fantasia">Fantasía</button></li>
+						<li class=""><button class="btn_film" data-category="Terror" id="cat_terror">Terror</button></li>
+					</ul>
+				</li>
+			</ul>
+
+			<ul class="navLinks">
+				<li><button class="btn-prof">Profesionales</button></li>
+				<li class="parentLista">
+					<button id="ddButtonCat-M">Películas<i class="fa-solid fa-chevron-down" id="flecha"></i></button>
+					<ul id="ddListPC" class="ddListPC">
+						<li class=""><button class="btn_film" data-category="todo" id="catPC_todo">Ver todo</button></li>
+						<li class=""><button class="btn_film" data-category="Acción" id="catPC_accion">Acción</button></li>
+						<li class=""><button class="btn_film" data-category="Ciencia Ficción" id="catPC_scifi">Sci-fi</button></li>
+						<li class=""><button class="btn_film" data-category="Comedia" id="catPC_comedia">Comedia</button></li>
+						<li class=""><button class="btn_film" data-category="Drama" id="catPC_drama">Drama</button></li>
+						<li class=""><button class="btn_film" data-category="Fantasía" id="catPC_fantasia">Fantasía</button></li>
+						<li class=""><button class="btn_film" data-category="Terror" id="catPC_terror">Terror</button></li>
+					</ul>
+				</li>
+			</ul>
+
+			<form class="menu__search rS" id="searchS">
+				<input type="text" class="menu__search__form" placeholder="Buscar en FMDb" />
+				<button class="" id="closeSearchS"><i class="fa-solid fa-x"></i></button>
+			</form>
+
+			<form class="menu__search rM">
+				<input type="text" class="menu__search__form" placeholder="Buscar en FMDb" />
+				<button class="menu__search_button">Search</button>
+			</form>
+			<button class="rS" id="openSearchS"><i class="fa-solid fa-magnifying-glass"></i></button>
+		</nav>
+
+		<!-- FIN NAV BAR -->
+
+		<!-- CARD-->
+
+		<main id="main">
+			<section class="home" id="hideHome">
+				<h1 class="title_home">Fake Movie Database</h1>
+				<h2 class="subtitle_home">La falsa base de datos de películas con poco contenido e información dudosa.</h2>
+				<p>Explora las películas de nuestra base de datos por categorías o busca información de tus actores preferidos</p>
+				<p>Si no encuentras la peli que estás buscando, puedes añadirla pulsando en botón de debajo.</p>
+				<div class="btn_container">
+					<button id="btn-form_open"><i class="fa-solid fa-clapperboard"></i></button>
+				</div>
+
+			</section>
+
+			<form class="form" id="movieForm">
+				<h3>Rellena la información de la película que quieres añadir</h3>
+				<p>Campos obligatorios</p>
+				<input id="form_title" type="text" class="" placeholder="Título"  required>
+				<input  id="form_releaseYear" type="number" placeholder="Año" required>
+				<input  id="form_nationality" type="text" class="" placeholder="País de origen" required>
+				<select  id="form_genre" name="select" placeholder="Selecciona el género que más se ajuste" required>
+					<option hidden selected>Selecciona el género que más se ajuste</option>
+					<option value="value1">Acción</option>
+					<option value="value2" >Ciencia Ficción</option>
+					<option value="value3">Comedia</option>
+					<option value="value3">Drama</option>
+					<option value="value3">Fantasía</option>
+					<option value="value3">Terror</option>
+				  </select>
+				<input  id="form_photo"type="text" class="titulo" placeholder="Copia aquí la url de una imagen" required>
+				<button id="btn-optDd">Toca para ver más campos opcionales <i id="flechaF" class="fa-solid fa-chevron-down"></i></button>
+				<ul class="form-ddList" id="form-ddList">
+					<li ><input  id="form_actors" type="text" class="titulo" placeholder="Reparto"></li>
+					<li><input  id="form_director"type="text" class="titulo" placeholder="Director"></li>
+					<li><input  id="form_writer"type="text" class="titulo" placeholder="Guionista"></li>
+					<li><input  id="form_language"type="text" class="titulo" placeholder="Idioma"></li>
+					<li><input  id="form_plataforma"type="text" class="titulo" placeholder="Plataforma"></li>
+					<li><input  id="form_producer"type="text" class="titulo" placeholder="Productora"></li>
+					<li><input  id="form_distributor"type="text" class="titulo" placeholder="Distribuidora"></li>
+					<li><input t id="form_mainChar"ype="text" class="titulo" placeholder="Nombre del protagonista"></li>
+					<li><div class="checkbox-cont">
+						<p for="">¿Es una película de Marvel?</p>
+						<input id="checkbox" type="checkbox" class="titulo"></div>
+					</li>
+				</ul>
+				<div class="btn_container">
+					<button class="btn-sendForm" id="btn-sendForm" >Enviar</button>
+					<button class="btn-sendForm" id ="btn-cancelForm">Cancelar</button>
+				</div>
+			</form>
+
+
+			<section class="films" id="films"></section>
+
+			<section class="profs" id="profs"></section>
+		</main>
+		<!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script> -->
+
+		<script type="module" src="./movieData.js"></script>
+		<script type="module" src="./functions.js"></script>
+	</body>
+</html>

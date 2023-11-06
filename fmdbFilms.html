@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script src="scriptFontAwesome.js"></script>
+		<!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" /> -->
+		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+		<link rel="stylesheet" href="fmdbStyles.css" />
+		<title>FMDb</title>
+	</head>
+	<body>
+		<!-- NAV BAR -->
+		<nav class="menu">
+			<button id="ddButton" class="rS"><i class="fa-solid fa-bars"></i></button>
+
+			<a href=""><img src="./img/logo-no-background.png" alt="logo" class="logo" /></a>
+
+			<ul class="ddListMobile rS" id="ddListMobile">
+				<li><a href="./fmdbProf.html">Profesionales</a></li>
+				<li>
+					<button id="ddButtonCat">Películas<i id="flechaS" class="fa-solid fa-chevron-right"></i></button>
+					<ul id="ddList--sec" class="ddList--sec">
+						<li class=""><a href="./fmdbFilms.html" id="cat_todo">Ver todo</a></li>
+						<li class=""><a href="./fmdbFilms.html" id="cat_accion">Acción</a></li>
+						<li class=""><a href="./fmdbFilms.html" id="cat_scifi">Sci-Fi</a></li>
+						<li class=""><a href="./fmdbFilms.html" id="cat_comedia">Comedia</a></li>
+						<li class=""><a href="./fmdbFilms.html" id="cat_drama">Drama</a></li>
+						<li class=""><a href="./fmdbFilms.html" id="cat_fantasia">Fantasía</a></li>
+						<li class=""><a href="./fmdbFilms.html" id="cat_terror">Terror</a></li>
+					</ul>
+				</li>
+			</ul>
+
+			<ul class="navLinks">
+				<li><a href="./fmdbProf.html">Profesionales</a></li>
+				<li class="parentLista">
+					<button id="ddButtonCat-M">Películas<i class="fa-solid fa-chevron-down" id="flecha"></i></button>
+					<ul id="ddListPC" class="ddListPC">
+						<li class=""><a href="./fmdbFilms.html" id="catPC_todo">Ver todo</a></li>
+						<li class=""><a href="./fmdbFilms.html" id="catPC_accion">Acción</a></li>
+						<li class=""><a href="./fmdbFilms.html" id="catPC_scifi">Sci-fi</a></li>
+						<li class=""><a href="./fmdbFilms.html" id="catPC_comedia">Comedia</a></li>
+						<li class=""><a href="./fmdbFilms.html" id="catPC_drama">Drama</a></li>
+						<li class=""><a href="./fmdbFilms.html" id="catPC_fantasia">Fantasía</a></li>
+						<li class=""><a href="./fmdbFilms.html" id="catPC_terror">Terror</a></li>
+					</ul>
+				</li>
+			</ul>
+
+			<form class="menu__search rS" id="searchS">
+				<input type="text" class="menu__search__form" placeholder="Buscar en FMDb" />
+				<button class="" id="closeSearchS"><i class="fa-solid fa-x"></i></button>
+			</form>
+
+			<form class="menu__search rM">
+				<input type="text" class="menu__search__form" placeholder="Buscar en FMDb" />
+				<button class="menu__search_button">Search</button>
+			</form>
+			<button class="rS" id="openSearchS"><i class="fa-solid fa-magnifying-glass"></i></button>
+		</nav>
+		<!-- FIN NAV BAR -->
+
+		<!-- CARD-->
+
+		<main class="films" id="filmsContainer"></main>
+		<!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script> -->
+
+		<script type="module" src="./movieData.js"></script>
+		<script type="module" src="./functions.js"></script>
+	</body>
+</html>

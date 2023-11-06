@@ -1,0 +1,813 @@
+:root {
+    --verde: #53be71;
+    --amarillo: #fff414;
+    --oscuro: #383838;
+    --claro: #dddddd;
+
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style-type: none;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-decoration: none;
+    font-size: 14px;
+    color: var(--claro)
+}
+
+body {
+    width: 100%;
+    height: auto;
+    background-color: var(--oscuro);
+}
+
+button {
+    border: none;
+    outline: none;
+    background: transparent;
+    cursor: pointer;
+}
+
+a,
+a:active,
+a:visited {
+    text-decoration: none;
+    color: currentColor;
+    cursor: pointer;
+}
+
+ul {
+    margin: 0;
+}
+
+/*BORDES PARA BORRAR LUEGO*/
+.b1 {
+    border: 2px solid red
+}
+
+.b2 {
+    border: 2px solid orange
+}
+
+.b3 {
+    border: 2px solid yellow
+}
+
+.b4 {
+    border: 2px solid green
+}
+
+.b5 {
+    border: 2px solid cyan
+}
+
+.b6 {
+    border: 2px solid blue
+}
+
+.b7 {
+    border: 2px solid violet
+}
+
+/**/
+
+.menu {
+    width: 100%;
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem;
+    background-color: #000;
+    z-index: 1;
+}
+
+.logo {
+    height: 50px
+}
+
+.menu i {
+    font-size: 1.5rem;
+}
+
+.navLinks {
+    display: none
+}
+
+#ddListMobile {
+    position: absolute;
+    display: none;
+    background-color: var(--oscuro);
+    left: 0;
+    top: 70px;
+    border: none;
+    /* padding: 0.8rem */
+    z-index: 1;
+}
+
+
+#ddListMobile li a,
+#ddListMobile li button {
+    color: var(--claro);
+    font-size: 1.5rem;
+    /* padding-left: 1rem; */
+
+}
+
+
+#ddListMobile li {
+    margin: 1rem
+}
+
+#ddListMobile li i {
+    font-size: 1.5rem;
+    margin-left: 1rem
+}
+
+.ddList--sec {
+    display: none;
+    font-size: 1.2rem;
+
+    /* color: var(--amarillo); */
+}
+
+#ddList--sec li {
+    font-size: 1.2rem;
+    color: var(--amarillo);
+}
+
+
+#ddList--sec li:hover {
+    color: var(--verde);
+    font-weight: 600;
+}
+
+#ddButtonCat {
+
+    color: var(--claro);
+    font-size: 1.5rem;
+}
+
+
+#ddList--sec li button {
+    font-size: 1.2rem;
+    color: var(--amarillo);
+    text-align: right;
+}
+
+#ddListMobile li #catTodo {
+    color: var(--verde)
+}
+
+#searchS {
+    display: none;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    position: absolute;
+    width: calc(100vw - 1.5rem);
+    height: 100%;
+    background-color: #000;
+    padding-right: 1rem;
+    transition: all ease 0.5s;
+
+}
+
+#searchS input {
+    height: 50%;
+    width: 90%;
+    font-size: 0.8rem;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    padding: 0.5rem
+}
+
+#searchS i {
+    color: var(--amarillo)
+}
+
+
+#searchS.dFlex {
+    display: flex;
+}
+
+.parentLista {
+    position: relative;
+}
+
+#ddListPC {
+    display: none;
+    position: absolute;
+    padding: 0.5rem;
+    left: 0;
+    top: 100%;
+
+    background-color: var(--verde);
+    color: var(--oscuro);
+    width: 10rem;
+    z-index: 1;
+}
+
+
+#flechaS {
+    transition: 0.3s ease all;
+}
+
+.activo #flechaS {
+    transform: rotate(90deg);
+}
+
+.rM {
+    display: none;
+}
+
+/*FICHAS PELÏCULA*/
+
+.films {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(1fr, 1fr));
+    gap: 1.5rem;
+    justify-content: center;
+    background-color: var(--oscuro);
+    padding: 2rem;
+}
+
+.films h2 {
+    color: var(--amarillo)
+}
+
+.filmCard {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    justify-self: center;
+    margin-top: 50px;
+    position: relative;
+    width: 90%;
+    background-color: #9ec4a9;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.3);
+    padding-bottom: 2rem;
+}
+
+.filmCard:first-child {
+    margin-top: 120px;
+}
+
+.filmCardPic--container {
+    position: relative;
+    overflow: hidden;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    height: 45%;
+}
+
+.filmCardTitle {
+    position: absolute;
+    top: 8px;
+    left: 16px;
+    font-size: 3.5rem;
+    text-shadow: 5px 5px 2px rgba(0, 0, 0, 0.3);
+}
+
+
+.filmCardPic--container img {
+    width: 100%;
+    height: auto;
+
+}
+
+.filmCardData {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px;
+}
+
+.filmAttribute,
+.filmAttribute span {
+
+    font-size: 1.5rem;
+    color: #000;
+}
+
+.filmAttribute span {
+    font-weight: 600;
+    margin-right: 0.5rem;
+}
+
+.filmCarData {
+    margin: 0.5rem 2rem;
+
+}
+
+
+/*FICHAS PROFESIONALES*/
+.profs {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(1fr, 1fr));
+    gap: 1.5rem;
+    justify-content: center;
+
+    background-color: var(--oscuro);
+    padding: 2rem;
+}
+
+.profCard {
+    display: flex;
+    margin-top: 50px;
+    position: relative;
+    width: 100%;
+    max-width: 85vw;
+    background-color: #f3f59a;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.3);
+    justify-content: space-between;
+    align-items: center;
+    height: 50vh;
+    justify-self: center;
+}
+
+.profs h2 {
+    color: var(--verde);
+    line-height: 0.8em;
+}
+
+
+.profCardPic--container {
+    position: relative;
+    display: flex;
+    overflow: hidden;
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+    height: 100%;
+    justify-content: center;
+
+}
+
+.profCardTitle {
+    position: absolute;
+    top: 85%;
+    left: 16px;
+    font-size: 2.5rem;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.8);
+}
+
+
+.profCardPic--container img {
+
+
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+    height: 100%;
+    width: auto;
+    justify-self: center;
+
+}
+
+
+.profAttribute,
+.profAttribute span {
+
+    font-size: 1rem;
+    color: #000;
+}
+
+.profAttribute span {
+    font-weight: 600;
+    margin-right: 0.5rem;
+}
+
+.profCardData {
+    margin: 3rem 1rem;
+    justify-self: flex-end;
+}
+
+.profs hr {
+    margin-bottom: 0.5rem;
+    border: #8f914d solid 1px
+}
+
+/*HOME*/
+main {
+    display: flex;
+    justify-content: center;
+}
+
+.films,
+.profs {
+    display: none;
+}
+
+.home {
+    padding-top: 1.8rem;
+    width: 85%;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.title_home {
+    font-size: 3rem;
+    color: var(--verde);
+}
+
+.subtitle_home {
+    padding-top: 1.8rem;
+    font-size: 2rem;
+    font-weight: 400;
+    line-height: 1.9rem;
+    color: var(--amarillo);
+}
+
+.home p {
+    padding: 1rem 0;
+    font-size: 1.5rem;
+    line-height: 1.4rem;
+}
+
+.home .btn_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.home button {
+    margin-top: 1.2rem;
+    background-color: var(--amarillo);
+    width: 8rem;
+    height: 8rem;
+    border-radius: 4rem;
+    transition: all ease 0.5s;
+
+
+}
+
+.home button i {
+
+    color: #383838;
+    font-size: 3rem;
+    transition: all ease 0.5s;
+}
+
+.home button:hover {
+    background-color: var(--verde);
+}
+
+.home button:hover i {
+    transform: scale(1.2);
+}
+
+.home button:active {
+    transform: scale(0.9);
+}
+
+.home button:active i {
+    transform: scale(0.9);
+}
+
+.form {
+    background: rgb(143, 143, 143);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.28);
+
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    justify-content: center;
+    z-index: 2
+}
+
+.form select,
+.form input {
+    margin: 0.5rem 0;
+    height: 2rem;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    color: var(--oscuro);
+    padding-left: 0.5rem
+}
+
+.form select option {
+    color: var(--oscuro);
+}
+
+.checkbox-cont {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0.5rem 0.5rem;
+}
+
+.btn-sendForm {
+    background-color: var(--verde);
+    width: 40%;
+    height: 2rem;
+    border-radius: 5px;
+    background-color: var(--oscuro);
+    margin: 1rem 0.5rem 0 0.5rem
+}
+
+.form-ddList li input {
+    width: 100%
+}
+
+#checkbox {
+    width: 20%;
+}
+
+#btn-optDd,
+
+.form label {
+    color: var(--oscuro);
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.form h3 {
+    color: var(--amarillo)
+}
+
+#form-ddList {
+    display: none;
+}
+
+.btn_container {
+    display: flex;
+    justify-content: center;
+}
+
+#movieForm {
+    display: none;
+
+}
+
+@media(min-width:576px) {
+    * {
+        font-size: 14px;
+    }
+
+    .title_home {
+        font-size: 3rem;
+
+    }
+
+    .subtitle_home {
+        padding: 1.8rem 0;
+        font-size: 2.2rem;
+
+        line-height: 2.1rem;
+
+    }
+
+    .home p {
+        padding: 1rem 0;
+        font-size: 1.8rem;
+        line-height: 1.9rem;
+    }
+
+    .home .btn_container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .home button {
+        margin-top: 2rem;
+        width: 12rem;
+        height: 12rem;
+        border-radius: 6rem;
+    }
+
+    .home button i {
+
+        color: #383838;
+        font-size: 6rem;
+    }
+
+
+}
+
+
+@media (min-width: 768px) {
+    * {
+        font-size: 16px;
+    }
+
+    .main {
+        width: 80%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+    }
+
+    .filmCard:first-child {
+        margin-top: 50px;
+    }
+
+    .menu {
+        padding: 0 2rem;
+    }
+
+    .rS,
+    #ddListMobile {
+        display: none !important;
+    }
+
+    .rM {
+        display: flex
+    }
+
+
+    .navLinks {
+        display: flex;
+        flex-direction: row;
+        height: 70px;
+        align-items: center;
+    }
+
+    .navLinks li {
+        height: 100%;
+    }
+
+    .navLinks a,
+    .navLinks button {
+        height: 100%;
+        padding: 0 2rem;
+        font-size: 1.2rem;
+        display: flex;
+        align-items: center;
+        height: 100%;
+
+
+    }
+
+    .menu__search_button {
+        color: black;
+        font-size: 0.8rem;
+        background-color: var(--verde);
+        padding: 0.2rem 0.7rem;
+        margin-left: 0.8rem;
+        border-radius: 5px;
+    }
+
+    .menu__search__form {
+        font-size: 0.8rem;
+        border-radius: 5px;
+        outline: none;
+        border: none;
+        padding: 0 0.5rem
+    }
+
+    #ddButtonCat-M {
+
+        width: 10rem;
+
+
+    }
+
+    #flecha {
+        font-size: 0.8rem;
+        margin-left: 0.5rem;
+        transition: 0.5s ease all;
+    }
+
+    .activo #flecha {
+        transform: rotate(-180deg);
+    }
+
+
+
+    .navLinks--cont {
+        height: 100%;
+    }
+
+    .navLinks button:hover,
+    .navLinks button:hover i,
+
+    .navLinks a:hover,
+    .navLinks a:focus,
+    .navLinks a:active,
+    .navLinks button.activo {
+
+        background-color: var(--verde);
+        color: var(--oscuro);
+        font-weight: 600;
+
+    }
+
+    .profCardTitle {
+        font-size: 4rem;
+    }
+
+    .profAttribute,
+    .profAttribute span {
+
+        font-size: 1.8rem;
+        color: #000;
+    }
+
+
+
+}
+
+#closeSearchS {
+    margin-right: 1rem;
+
+}
+
+
+
+
+@media(min-width:992px) {
+
+    * {
+        font-size: 18px;
+    }
+
+    .menu {
+        padding: 0 3rem;
+    }
+
+    .filmCardTitle {
+        font-size: 3rem;
+    }
+
+
+
+}
+
+@media(min-width:1400px) {
+
+    * {
+        font-size: 20px;
+    }
+
+    .menu {
+        padding: 0 4rem;
+    }
+
+    .films {
+
+        grid-template-columns: repeat(auto-fit, minmax(670px, 1fr));
+        gap: 3rem;
+        padding: 3rem 3rem;
+
+
+    }
+
+    .profs {
+
+        grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
+        gap: 3rem;
+        padding: 3rem 5rem;
+    }
+
+    .title_home {
+        font-size: 5rem;
+
+    }
+
+    .subtitle_home {
+        padding: 1.8rem 0;
+        font-size: 3.5rem;
+
+        line-height: 3.5rem;
+
+    }
+
+    .home p {
+        padding: 1rem 0;
+        font-size: 2rem;
+        line-height: 2rem;
+    }
+
+    .home .btn_container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .home button {
+        margin-top: 5rem;
+        width: 12rem;
+        height: 12rem;
+        border-radius: 6rem;
+    }
+
+    .home button i {
+
+        color: #383838;
+        font-size: 6rem;
+    }
+
+}
