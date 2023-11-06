@@ -524,7 +524,9 @@ main {
     width: 20%;
 }
 
-#btn-optDd,
+#btn-optDd {
+    cursor: pointer
+}
 
 .form label {
     color: var(--oscuro);
@@ -767,9 +769,9 @@ main {
 
     .profs {
 
-        grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(580px, 1fr));
         gap: 3rem;
-        padding: 3rem 5rem;
+        padding: 3rem 3rem;
     }
 
     .title_home {
